@@ -18,6 +18,11 @@ inquirer
       if (err) throw err;
       console.log("URL saved to URL.txt");
     });
+    // Read the URL file
+    fs.readFile("URL.txt", "utf8", (err, data) => {
+      if (err) throw err;
+      console.log("URL read from URL.txt:", data);
+    });
   })
   .catch((error) => {
     if (error.isTtyError) {
